@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+  	<div class="fixed"> 
+		<nav class="top-bar" data-topbar data-options="is_hover: false" >
+		  	 <ul class="title-area">   
+			  	 <li class="name"> 
+			  	 	<h1><a href="http://carleton.ca">Carleton.ca</a></h1> 
+			  	 <!--	<h1><a href="javascript:history.back()">Back</a></h1> -->
+			  	 	 
+			  	 </li> 
+			  	 
+		  	 	<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li> 
+		  	 </ul> 
+		  	  
+		  	  <section class="top-bar-section"> 
+			  	 <!-- Left Nav Section --> 
+			  	 <ul class="left"> 
+        			<!--This is the main page selector for the buildings -->
+					<select id="startList" onchange="setStartLocaion(this)" style="margin:0 0 0 0; max-width:325px;margin-top:4px;font-weight:bold">
+					<option>Current Location</option>
+					<option value="AA">[AA] Architechture Building</option>
+					<option value="AH">[AH] Alumni Hall</option>
+					<option value="AC">[AC] Athletics Building</option>
+					<option value="AP">[AP] Azrieli Pavillion</option>
+					<option value="AT">[AT] Azrieli Theater</option>
+					<option value="IH">[IH] Carleton Ice House</option>
+					<option value="TT">[TT] Carleton Technology & Training Center (CTTC)</option>
+					<option value="CB">[CB] Canal Building</option>
+					<option value="CC">[CC] Colonel By Child Care Center</option>
+					<option value="DT">[DT] Dunton Tower</option>
+					<option value="FH">[FH] Field House</option>
+					<option value="FR">[FR] Frontenac House</option>
+					<option value="GH">[GH] Glengary House</option>
+					<option value="GR">[GR] Grenville House</option>
+					<option value="HP">[HP] Herzberg Building</option>
+					<option value="HC">[HC] Human Computer Interaction Building</option>
+					<option value="LH">[LH] Lanark House</option>
+					<option value="LE">[LE] Leeds House</option>
+					<option value="LS">[LS] Life Sciences Research Building</option>
+					<option value="LA">[LA] Loeb Building</option>
+					<option value="LX">[LX] Lennox and Addington House</option>
+					<option value="ME">[ME] Mackenzie Building</option>
+					<option value="ML">[ML] MacOdrum Library</option>
+					<option value="MB">[MB] Maintenance Building</option>
+					<option value="MC">[MC] Minto Center for Advanced Studies in Engineering (CASE)</option>
+					<option value="NB">[NB] Nesbitt Biology Building</option>
+					<option value="NW">[NW] National Wildlife Research Building</option>
+					<option value="PA">[PA] Patterson Hall</option>
+					<option value="PG">[PG] Parking Garage</option>
+					<option value="PH">[PH] Prescott House</option>
+					<option value="RB">[RB] River Building</option>
+					<option value="RH">[RH] Renfrew House</option>
+					<option value="CO">[CO] Residence Commons</option>
+					<option value="RO">[RO] Robertson Hall</option>
+					<option value="RU">[RU] Russel House</option>
+					<option value="SP">[SP] St. Patrick's Building</option>
+					<option value="SR">[SR] Social Science Research Building</option>
+					<option value="SA">[SA] Southam Hall</option>
+					<option value="SC">[SC] Steacie Building</option>
+					<option value="SD">[SD] Stormont and Dundas House</option>
+					<option value="TC">[TC] Tennis Center</option>
+					<option value="TB">[TB] Tory Building</option>	
+					<option value="UC">[UC] University Center</option>
+					<option value="VS">[VS] Visualization & Simulation Building</option>
+					<option value="P1">[P1] Parking Lot P1</option>
+					<option value="P2">[P2] Parking Lot P2</option>
+					<option value="P3">[P3] Parking Lot P3</option>
+					<option value="P4">[P4] Parking Lot P4</option>
+					<option value="P5">[P5] Parking Lot P5</option>
+					<option value="P6">[P6] Parking Lot P6</option>
+					<option value="P7">[P7] Parking Lot P7</option>
+					</select>
+					
+					<!--This is the main page selector for the buildings -->
+					<select id="myList" onchange="MapFromDropDown(this)" style="margin:0 0 0 0; max-width:325px;font-weight:bold;margin-top:4px">
+					<option>Destination Building </option>
+					<option value="AA">[AA] Architechture Building</option>
+					<option value="AH">[AH] Alumni Hall</option>
+					<option value="AC">[AC] Athletics Building</option>
+					<option value="AP">[AP] Azrieli Pavillion</option>
+					<option value="AT">[AT] Azrieli Theater</option>
+					<option value="IH">[IH] Carleton Ice House</option>
+					<option value="TT">[TT] Carleton Technology & Training Center (CTTC)</option>
+					<option value="CB">[CB] Canal Building</option>
+					<option value="CC">[CC] Colonel By Child Care Center</option>
+					<option value="DT">[DT] Dunton Tower</option>
+					<option value="FH">[FH] Field House</option>
+					<option value="FR">[FR] Frontenac House</option>
+					<option value="GH">[GH] Glengary House</option>
+					<option value="GR">[GR] Grenville House</option>
+					<option value="HP">[HP] Herzberg Building</option>
+					<option value="HC">[HC] Human Computer Interaction Building</option>
+					<option value="LH">[LH] Lanark House</option>
+					<option value="LE">[LE] Leeds House</option>
+					<option value="LS">[LS] Life Sciences Research Building</option>
+					<option value="LA">[LA] Loeb Building</option>
+					<option value="LX">[LX] Lennox and Addington House</option>
+					<option value="ME">[ME] Mackenzie Building</option>
+					<option value="ML">[ML] MacOdrum Library</option>
+					<option value="MB">[MB] Maintenance Building</option>
+					<option value="MC">[MC] Minto Center for Advanced Studies in Engineering (CASE)</option>
+					<option value="NB">[NB] Nesbitt Biology Building</option>
+					<option value="NW">[NW] National Wildlife Research Building</option>
+					<option value="PA">[PA] Patterson Hall</option>
+					<option value="PG">[PG] Parking Garage</option>
+					<option value="PH">[PH] Prescott House</option>
+					<option value="RB">[RB] River Building</option>
+					<option value="RH">[RH] Renfrew House</option>
+					<option value="CO">[CO] Residence Commons</option>
+					<option value="RO">[RO] Robertson Hall</option>
+					<option value="RU">[RU] Russel House</option>
+					<option value="SP">[SP] St. Patrick's Building</option>
+					<option value="SR">[SR] Social Science Research Building</option>
+					<option value="SA">[SA] Southam Hall</option>
+					<option value="SC">[SC] Steacie Building</option>
+					<option value="SD">[SD] Stormont and Dundas House</option>
+					<option value="TC">[TC] Tennis Center</option>
+					<option value="TB">[TB] Tory Building</option>	
+					<option value="UC">[UC] University Center</option>
+					<option value="VS">[VS] Visualization & Simulation Building</option>
+					<option value="P1">[P1] Parking Lot P1</option>
+					<option value="P2">[P2] Parking Lot P2</option>
+					<option value="P3">[P3] Parking Lot P3</option>
+					<option value="P4">[P4] Parking Lot P4</option>
+					<option value="P5">[P5] Parking Lot P5</option>
+					<option value="P6">[P6] Parking Lot P6</option>
+					<option value="P7">[P7] Parking Lot P7</option>
+					</select>
+			</section>
+					
+		  	 <section class="top-bar-section"> 
+			  	 <!-- Right Nav Section --> 
+			  	 <ul class="right"> 
+				  	 <li><a href="#"><input id="radio1" CHECKED type="radio" name="paths" value="O" onchange="OvsTclick(this.value)"><label for="radio1" style="color:white">Use Outdoor Paths</label> </a>
+      				 <li><a href="#"><input id="radio2" type="radio" name="paths" value="T" onchange="OvsTclick(this.value)"> <label for="radio2" style="color:white" ">Use Tunnel Paths</label> </a> 
+      				 <li><a href="#"><input id="checkbox1" type="checkbox" name="icons" value="i" onchange="iconsToggle()"> <label for="checkbox1" style="color:white">Display Building Icons</label> </a> 
+		  	  </section> 
+		  	  
+		  	</nav>			
+  	</div>
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carleton Map App</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script type="text/javascript"
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKN2SV1Sg3rTxson6oxNS0oXx5nv3feU0&sensor=false">
+    </script>
+    
+     			 <!--Model (Data)-->
+    <!--UI data from the buildings -->
+    <script src="Model/GroupedBuildingItems.js"></script>
+ 	<!-- Each individual outside point in form of a directed graph	-->
+ 	<script src="Model/CarletonNodes.js"></script>
+ 	<!--	An array of All Outside points -->
+ 	<script src="Model/allpoints.js"> </script>
+ 	<!--Global Variables (Tunnel Toggle, Destination, Location) -->
+ 	<script src="Model/GLOBAL_DATA.js"></script>
+ 	
+ 				<!--View (GUI)-->
+ 	<!--Load the initial conditions of the map -->
+    <script src="View/load.js"></script> 
+    <script src="View/reload.js"></script>
+    
+			<!--ViewModel (The behavior of the App)-->
+	<!--Get the User GPS, and map it to our graph -->
+	<script src="ViewModel/GetPosition.js"></script>
+    <script src="ViewModel/LocationToPoint.js"></script>
+	
+	
+    <script src="ViewModel/ClosestPoint.js"> </script>
+
+	<!--Load the initial conditions of the map -->	
+	<script src="ViewModel/PathFinder.js"></script>			 
+    			
+
+    
+    
+    
+    
+    <script src ="ViewModel/Set_Get_Location.js"></script>
+
+    
+	<script src="ViewModel/GUI_Controls.js"></script>
+	
+	<script src="ViewModel/setStartLocation.js"></script>
+	
+	 		 <!--Error Testing Modules-->
+    <script src="ViewModel/ERROR_reload/error_pathfinding.js"> </script>
+ 
+    <script type="text/javascript">	 
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/custom.modernizr.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

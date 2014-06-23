@@ -1,0 +1,17 @@
+
+
+This project is a GPS graph driven high level application that uses Javascript/HTML and CSS to construct a pathfinding graph to route the user to a destination local to Carleton University.
+
+It aims to configure the user approach where it attempts to route the user to common Carleton Facilities such as Library, coffee shops, Starbucks, as well as various
+other facilities. 
+
+It separates the View and Model. The Model is about 250 Node Data points that essentially construct the graph. They are all given the same attributes as having a longitude, a latitude, a building name and their variable name. The Variable name is 100% purely for testing purposes and the user should not care that there is a point entitled A40. 
+
+The View is essentially the High level user interface the prompts the user for their location, displays interesting information about the campus and creates an overlay of the campus. It, by default uses the Google Map interface, however should be elaborated upon to make it more shaded, and finely minced.
+
+Finally the ViewModel is the pathfinding algorithm that the User Interface accepts and routes them to their static location. The viewmodel does a lot of the "work" in the sense that it does its job and then carries on that service. 
+This component should do several things, route the user to the location, hold a watch on the user and make sure it does not go that bad direction, inform the user of various outlets available at Carleton, and possible have a side drop down menu to elaborate even more on the information. 
+
+
+This README File was written By Luke Morrison on March 1st 2014 at 11:30pm
+Last edited :	 				Date :

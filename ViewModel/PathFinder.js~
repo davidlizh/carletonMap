@@ -1,0 +1,24 @@
+   //Contains function that will take in a location and a destination and return an array of Node Objects marking the path.
+
+	function pathFinder(location,destination){
+	   	var LocalDestination = new Object();
+		LocalDestination.building = destination.building;
+		LocalDestination.lat =destination.lat;
+		LocalDestination.lng = destination.lng;
+		
+		var dest=LocalDestination;	// destination
+		var loc =location;   //current Location. 
+    	var pathArray=new Array();
+		pathArray.push(loc);
+		//Path finding loop while we are not at out destination
+		while ( loc.building != dest.building ) {
+			//finds the Closest SURR nearest to the destination
+			var closest_pt= closest_pt_mark(dest,loc, pathArray);
+			//Pushes Node object to our Array 
+			pathArray.push(closest_pt);
+			//Location is now the nearest point.
+			loc=closest_pt;
+		}
+		//return array of object Nodes.
+		return pathArray;
+    }
